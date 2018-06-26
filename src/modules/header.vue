@@ -12,7 +12,7 @@ import $ from 'jquery'
 export default {
   name: 'com-header',
   components: {
-    Login
+    
   },
   data () {
     return {

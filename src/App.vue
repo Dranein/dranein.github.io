@@ -89,7 +89,6 @@ export default {
 #app {
   position: absolute;
   overflow: hidden;
-  max-width: 1080px;
   margin:  0 auto;
   left: 0;
   right: 0;
