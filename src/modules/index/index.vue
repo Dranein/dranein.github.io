@@ -1,57 +1,10 @@
 <template>
   <div class="view-index">
-    <div class="top_nav">
-      <ul>
-        <li v-for="(item,index) in topNav"><span>{{item.title}}</span></li>
-      </ul>
-    </div>
-    <com-banner size='big' ref='ref_banner' bannerkey="index_carousel_1"></com-banner>
-    <index-ad></index-ad>
-    <com-banner bannerkey="index_carousel_2"></com-banner>
-    <index-tab></index-tab>
-    <div class="classBox">
-      <index-class className='最热板块' postModule="HOSTEST" bannerkey="index_carousel_3"></index-class>
-    </div>
-    <div class="classBox">
-      <index-class className='热门板块' postModule="HOST" bannerkey="index_carousel_4"></index-class>
-    </div>
-    <div class="classBox">
-      <index-class className='其他板块' postModule="OTHER1" bannerkey="index_carousel_5"></index-class>
-    </div>
-    <div class="classBox">
-      <index-class className='其他板块2' postModule="OTHER2" bannerkey="index_carousel_6"></index-class>
-    </div>
-    <div class="classBox">
-      <index-class className='校友老乡社团' postModule="ALUMNI" bannerkey="index_carousel_7"></index-class>
-    </div>
-    <footer class="footer">
-      <com-banner class="footer_bannner" ref='ref_banner_footer' bannerkey="index_carousel_8"></com-banner>
-      <div class="footer_friendlylink">
-        <div class="title">/ 友情链接 /</div> 
-        <ul>
-          <li><i class="icon"></i><p>伯明翰学院</p></li>
-          <li><i class="icon"></i><p>中国驻英国大使馆</p></li>
-          <li><i class="icon"></i><p>中国驻英国大使馆</p></li>
-          <li><i class="icon"></i><p>全英学联</p></li>
-        </ul>
-      </div>
-      <div class="footer_adr">
-        <ul>
-          <li>联系我们</li>
-          <li>广告合作</li>
-          <li>免责声明</li>
-          <li>网站统计</li>
-        </ul>
-      </div>
-    </footer>
+    首页
   </div>
 </template>
 
 <script>
-import ComBanner from '@/components/banner/banner'
-import IndexAd from './child/index_ad'
-import IndexTab from './child/index_tab'
-import IndexClass from './child/index_class'
 import Bus from '@/helper/bus';
 import Api from '@/helper/api';
 import Rest from '@/helper/rest';
@@ -61,7 +14,7 @@ import $ from 'jquery'
 export default {
   name: 'index',
   components: {
-  	ComBanner,IndexAd,IndexTab,IndexClass
+  	
   },
   data () {
     return {
@@ -81,7 +34,6 @@ export default {
     
   },
   activated() {
-    Bus.$emit('headerType');
     this.init();
   }
 }
