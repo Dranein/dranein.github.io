@@ -126,7 +126,7 @@ function downloadHelper(path, data, callback) {
 }
 
 function getBaseUrl(path) {
-  return 'http://39.106.203.38:8090/';
+  return 'http://localhost:3000/';
 }
 
 function apiSetting(type, path, contentType, dataType) {
@@ -141,11 +141,6 @@ function apiSetting(type, path, contentType, dataType) {
     // contentType: contentType || 'application/x-www-form-urlencoded',
     // dataType: dataType || 'json',
     timeout: 1000 * 60,
-    headers: {'Access-Control-Allow-Origin': '*','User-Type': 'USER'},
-    crossDomain: true,
-    xhrFields: {//是否携带cookie
-      withCredentials: true
-    },
     beforeSend: function(xhr) {
       // $('#processing').removeClass('hide');
     },
