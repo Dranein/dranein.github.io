@@ -126,7 +126,7 @@ function downloadHelper(path, data, callback) {
 }
 
 function getBaseUrl(path) {
-  return 'http://172.17.137.175:3000/';
+  return 'http://localhost:3000/';
 }
 
 function apiSetting(type, path, contentType, dataType) {
