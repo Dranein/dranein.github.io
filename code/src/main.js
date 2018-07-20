@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import {HappyScroll} from 'vue-happy-scroll'
+Vue.component('happy-scroll', HappyScroll)
+import 'vue-happy-scroll/docs/happy-scroll.css'
 
 Vue.config.productionTip = false
 

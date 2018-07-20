@@ -6,7 +6,7 @@
     </div>
     <div class="postsList">
       <div class="item" v-for="(item,index) in postsList">
-        <p class="time">{{item.createtime}}</p>
+        <p class="time">这篇帖子创造于：{{item.createtime}}</p>
         <p class="title">{{item.postTitle}}</p>
         <div class="content" v-html="item.postContent"></div>
       </div>
@@ -24,12 +24,12 @@ import Bus from '@/helper/bus';
 import Api from '@/helper/api';
 import Rest from '@/helper/rest';
 import Helper from '@/helper/helper';
-import $ from 'jquery'
+import $ from 'jquery'  
 
 export default {
   name: 'index',
   components: {
-  	
+
   },
   data () {
     return {
@@ -49,6 +49,9 @@ export default {
       var restApi = Api.posts.getpostsList;
       Rest.get(restApi).done((res)=>{
         if(Helper.isSuccess(res)){
+          res.data.forEach((o)=>{
+            o.createtime = Helper.formatDateAndTime(o.createtime,"yyyy-MM-dd hh:mm")
+          })  
           this.postsList = res.data;
         }
       })
@@ -80,6 +83,8 @@ export default {
 @import "../../assets/sass/install";
 
 .view-index{
+  height: 100%;
+  width: 100%;
 	font-size: 0;
   .banner{
     position: relative;
@@ -100,6 +105,14 @@ export default {
       background-color: #fff;
       text-align: left;
       margin-bottom: px2rem(20);
+      cursor: pointer;
+      transition: all 500ms;
+      -moz-transition: all 500ms;  /* Firefox 4 */
+      -webkit-transition: all 500ms; /* Safari 和 Chrome */
+      -o-transition: all 500ms;  /* Opera */
+      &:hover{
+        box-shadow: 0 5px 5px 2px rgba(0,0,0,0.1);
+      }
       .time{
         font-size: px2rem(14);
         color: #999;
@@ -112,8 +125,11 @@ export default {
       }
       .content{
         font-size: px2rem(16);
-        text-indent: 2em;
         color: #666;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
       }
       input,textarea{
         margin: 0; 

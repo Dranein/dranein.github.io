@@ -4,11 +4,15 @@
       <com-header>
       </com-header>
     </header>
+
     <div class="app_content">
-      <keep-alive>
-        <router-view/>
-      </keep-alive>
+      <transition name="fade">
+        <keep-alive>
+          <router-view/>
+        </keep-alive>
+      </transition>
     </div>
+
     <transition :name="tranName">
       <div class="app_nav"  v-if="navShow" v-clickoutside="nav_clickoutside">
         <com-nav>
@@ -38,7 +42,7 @@ export default {
   name: 'App',
   components: {
     ComHeader,
-    ComNav
+    ComNav,
   },
   directives: {
     clickoutside

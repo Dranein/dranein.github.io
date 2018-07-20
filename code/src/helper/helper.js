@@ -550,6 +550,27 @@ const helper = {
     }
     return num;
   },
+
+  formatDateAndTime (mydate,format) {
+    var mydate = new Date(mydate);
+     var args = {
+         "M+": mydate.getMonth() + 1,
+         "d+": mydate.getDate(),
+         "h+": mydate.getHours(),
+         "m+": mydate.getMinutes(),
+         "s+": mydate.getSeconds(),
+         "q+": Math.floor((mydate.getMonth() + 3) / 3),  //quarter
+         "S": mydate.getMilliseconds()
+     };
+     if (/(y+)/.test(format))
+         format = format.replace(RegExp.$1, (mydate.getFullYear() + "").substr(4 - RegExp.$1.length));
+     for (var i in args) {
+         var n = args[i];
+         if (new RegExp("(" + i + ")").test(format))
+             format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? n : ("00" + n).substr(("" + n).length));
+     }
+     return format;
+  },
   /*
    资金格式化插件
    @value 金额(單位分)
