@@ -2,7 +2,7 @@
 
 [gitHub地址](https://github.com/Dranein/activities-/tree/master/redPackets)如果觉得还ok的话，点个star吧；
 
-![预览图](/redpack.gif)
+![预览图](/blog/redpack.gif)
 
 ## 首先先简单的写一下页面并加上样式
 ```javascript
