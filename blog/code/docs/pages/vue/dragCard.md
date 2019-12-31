@@ -1,5 +1,5 @@
 # 拖拽排列卡片组件
-![预览图](/blog/dragCard.gif)
+![预览图](https://github.com/Dranein/dranein.github.io/blob/master/blog/dragCard.gif?raw=true)
 
 ## 前言
 之前在掘金上看到了一遍分享拖拽卡片组件的文章，看了大致思路，觉得很清晰，也想动手实现一下；
