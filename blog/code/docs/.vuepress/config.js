@@ -19,7 +19,9 @@ module.exports = {
                 text: '分类',
                 ariaLabel: '分类',
                 items: [
-                    { text: '文章', link: '/pages/articles/1024.md' }
+                    { text: '小游戏', link: '/pages/articles/1024.md' },
+                    { text: 'Vue', link: '/pages/vue/dragCard.md' },
+                    { text: 'React', link: '/pages/react/city.md' },
                 ]
             },
             { text: 'Github', link: 'https://github.com/dranein' },
@@ -27,15 +29,34 @@ module.exports = {
         sidebar: {
             '/pages/articles/':[
                 {
-                    title: 'demo',   // 必要的
+                    title: '小游戏',   // 必要的
                     collapsable: false, // 可选的, 默认值是 true,
                     sidebarDepth: 1,    // 可选的, 默认值是 1
                     children: [
                         ['1024.md', '小游戏之1024'],
                         ['fish.md', '小游戏之爱心鱼'],
                         ['plane.md', '小游戏之飞机大战'],
-                        ['redpack.md', '小游戏之红包雨'],
+                        ['redpack.md', '小游戏之红包雨']
+                    ]
+                }
+            ],
+            '/pages/react/':[
+                {
+                    title: 'React',   // 必要的
+                    collapsable: false, // 可选的, 默认值是 true,
+                    sidebarDepth: 1,    // 可选的, 默认值是 1
+                    children: [
                         ['city.md', '城市选择组件']
+                    ]
+                }
+            ],
+            '/pages/vue/':[
+                {
+                    title: 'Vue',   // 必要的
+                    collapsable: false, // 可选的, 默认值是 true,
+                    sidebarDepth: 1,    // 可选的, 默认值是 1
+                    children: [
+                        ['dragCard.md', '拖拽排列卡片']
                     ]
                 }
             ]
