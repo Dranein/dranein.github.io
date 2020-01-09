@@ -14,8 +14,7 @@
 ## 使用
 在仓库中拿到dragCard.vue文件，引入到项目中，来看下面这个例子
 
-```javascript
-// app.js
+```html
 <template>
   <div id="app">
     <DragCard
@@ -28,8 +27,9 @@
     </DragCard>
   </div>
 </template>
-
-<script>
+```
+```js
+// app.js
   import DragCard from './components/DragCard.vue'
 
   export default {
@@ -55,7 +55,6 @@
       }
     }
   }
-</script>
 ```
 
 
@@ -160,7 +159,7 @@
 - dragCardWarpperStyle为容器的样式，通过props传入的值计算出容器的宽高；在组件初始化的时候就应该去计算了，用init()包含起来；
 
 ``` js
-// ... 
+// ...
  created() {
    this.init();
  },
@@ -210,12 +209,12 @@
 在`handleMousedown()`的时候直接定义`handleMousemove()`和`handleMouseUp()`事件，并且在`handleMouseUp()`中移除；
 
 首先是几个比较重要的变量和方法
-- `itemList` ：`list`的拷贝，并加上后续需要用到的属性`dom`（当前卡片的节点信息，通过ref获取）, `isMoveing`（标记当前卡片是否在移动中）, `left`, `top`, 
+- `itemList` ：`list`的拷贝，并加上后续需要用到的属性`dom`（当前卡片的节点信息，通过ref获取）, `isMoveing`（标记当前卡片是否在移动中）, `left`, `top`,
 - `curItem` ：当前卡片用的比较多，所以这里单独拿了出来，并且在移动的时候，单前卡片的过渡效果应该去除，不然移动会卡顿，并且`z-index`应该在较高的层级
 - `targetItem` ： 即将交换位置的卡片对象，起始为`null`
 - `mousePosition` ：鼠标起始位置，移动后的鼠标位置减去起始位置，就是卡片的移动偏移量；
 
-- `handleMousemove()` ：鼠标移动 
+- `handleMousemove()` ：鼠标移动
 - `cardDetect()` ：卡片移动检测，是否需要执行位置交换
 - `swicthPosition()` ：交换卡片位置
 - `handleMouseUp()` ：鼠标抬起
@@ -225,7 +224,7 @@ handleMousedown(e, optionItem) {
   e.preventDefault();
   let that = this;
   if (this.timer) return false; // timer为全局的定时器，表示当前有卡片正在移动，直接返回；
-  
+
   // 拷贝一份list，并加上后续要使用的属性；
   let itemList = that.list.map(item => {
     // 如果ref是动态赋的值，存入$refs中会是一个数组；
@@ -263,7 +262,7 @@ handleMousedown(e, optionItem) {
   function handleMousemove(e) {}
   // 卡片交换检测
   function cardDetect() {}
-  // 卡片交换 
+  // 卡片交换
   function swicthPosition() {}
   // 鼠标抬起
   function handleMouseUp() {}
@@ -397,7 +396,7 @@ handleMousedown(e, optionItem) {
     // 同步dragCard_index到list中；
     that.list.find(item => item.dragCard_id === optionItem.dragCard_id).dragCard_index = curItem.dragCard_index;
     curItem.dom.style.left = curItem.left + 'px';
-    curItem.dom.style.top = curItem.top + 'px';    
+    curItem.dom.style.top = curItem.top + 'px';
     // 派发mouseUp事件通知父组件
     that.$emit('mouseUp', that.list.map(item => item.dragCard_index));
     that.timer = setTimeout(() => {
@@ -407,7 +406,7 @@ handleMousedown(e, optionItem) {
       that.timer = null;
     }, 300);
   }
-``` 
+```
 
 ## 写在后面
 到这里这个组件就完成啦!
