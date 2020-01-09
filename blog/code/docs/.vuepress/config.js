@@ -1,5 +1,5 @@
 module.exports = {
-    base: '/blog/',
+    base: '/',
     title: '菜头丸的首页', // 显示在左上角的网页名称以及首页在浏览器标签显示的title名称
     description: '菜头丸的前端学习记录', // meta 中的描述文字，用于SEO
     // 注入到当前页面的 HTML <head> 中的标签
