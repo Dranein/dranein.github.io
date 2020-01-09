@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cssStudy</title>
+</head>
+<body>
+<div id="app">
+  <!--饼图-->
+  <div class="item">
+    <div class="item_title">饼图</div>
+    <div class="item_content">
+      <div class="bing"></div>
+    </div>
+  </div>
+
+  <!--柱状图-->
+  <div class="item">
+    <div class="item_title">柱状图</div>
+    <div class="item_content">
+      <div class="sassfor">
+        <div class="item_tip">
+          <p>SASS遍历 @for</p>
+          <p>@for $i from 开始值 through 结束值(包括结束值)</p>
+          <p>@for $i from 开始值 to 结束值(不包括结束值)</p>
+          <p>使用：- &:nth-child(#{$i}) - height: ($i * 15px);</p>
+        </div>
+        <div class="sassfor_case">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--菜单-->
+  <div class="item">
+    <div class="item_title">菜单</div>
+    <div class="item_content">
+      <div class="item_tip">
+        <p>通过box-shadow添加遮罩</p>
+      </div>
+      <div class="burger_menu-warpper">
+        <div class="burger_menu burger_menu-right">
+          <div class="burger_menu-button">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <div class="burger_menu-content">
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+            <div>D</div>
+          </div>
+        </div>
+        <div class="burger_menu burger_menu-top">
+          <div class="burger_menu-button">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <div class="burger_menu-content">
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+            <div>D</div>
+          </div>
+        </div>
+        <div class="burger_menu burger_menu-bottom">
+          <div class="burger_menu-button">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <div class="burger_menu-content">
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+            <div>D</div>
+          </div>
+        </div>
+        <div class="burger_menu burger_menu-left">
+          <div class="burger_menu-button">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <div class="burger_menu-content">
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+            <div>D</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--CSS var() 函数-->
+  <div class="item">
+    <div class="item_title">CSS var() 函数</div>
+    <div class="item_content">
+      <div class="item_tip">
+        <p>自定义属性的名称，必需以 -- 开头</p>
+        <p>可通过style.setProperty(propertyName, value)改变值</p>
+      </div>
+      <nav class="navtab">
+          <ul>
+            <li class="navtab-item">Home</li>
+            <li class="navtab-item active">Explore</li>
+            <li class="navtab-item">Notification</li>
+            <li class="navtab-item">Profile</li>
+          </ul>
+        </nav>
+    </div>
+  </div>
+
+  <!--文字特效-->
+  <div class="item">
+    <div class="item_title">文字特效</div>
+    <div class="item_content">
+      <div class="item_tip">
+        <p>1.css文字特效是单行的特效</p>
+        <p>2.案例二中em可以匹配中文字符，模拟键入的效果</p>
+        <p>3.用steps最后一步不会显示效果，如果没有添加animation-fill-mode: forwards;保持最后效果的话，需要多加一步</p>
+        <p>4.利用js分割字符串</p>
+      </div>
+      <div class="world">
+        <div class="world_item world_item1">case1.纯css写出文字缓缓出现的效果，来看看具体实现！超出的部分直接省略！</div>
+        <div class="world_item world_item2">案例二，也是纯样式实现，模拟键入效果，不过只适用于纯中文字符；</div>
+        <div class="world_item world_item3">案例三，这里是用js实现的，混合模式，中英文都可以！</div>
+        <div class="glowIn glowIn-title">你好啊，这是标题</div>
+        <div class="glowIn">这里也是利用js，将文字内容转化成数组，并给每一个字符添加上span。利用animation-delay,让每一个字符缓缓出现，text-shadow产生光晕效果；让我们复制多一些文本；让我们复制多一些文本；让我们复制多一些文本；copy more；让我们复制多一些文本；copy more；让我们复制多一些文本；copy more</div>
+        <div class="worldNeon">霓虹灯效果<br/>bling bling</div>
+      </div>
+    </div>
+  </div>
+
+  <!--clip-path-->
+<!--  <div class="item">-->
+<!--    <div class="item_title">clip-path</div>-->
+<!--    <div class="item_content">-->
+<!--      <div class="item_tip">-->
+<!--        <p>自定义属性的名称，必需以 &#45;&#45; 开头</p>-->
+<!--        <p>可通过style.setProperty(propertyName, value)改变值</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<script type="text/javascript" src="index.js"></script></body>
+</html>
