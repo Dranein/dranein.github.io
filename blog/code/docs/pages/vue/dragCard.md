@@ -116,9 +116,7 @@
             class="dragCard_head"
             @mousedown="touchStart($event, item)">
             <slot name="head" :item="item" >
-              <div class="dragCard_head-defaut">
-                {{ item.head ? item.head : `卡片标题${index + 1}` }}
-              </div>
+              <div class="dragCard_head-defaut">卡片标题</div>
             </slot>
           </div>
           <div class="dragCard_body">
